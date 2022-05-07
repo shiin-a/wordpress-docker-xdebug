@@ -9,6 +9,8 @@ services:
       MYSQL_DATABASE: wordpress
       MYSQL_USER: wordpress
       MYSQL_PASSWORD: wordpress
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
 
   wp:
     depends_on:
@@ -25,3 +27,5 @@ services:
       WORDPRESS_DB_PASSWORD: wordpress
       XDEBUG_MODE: debug
       XDEBUG_CONFIG: start_with_request=yes client_host=host.docker.internal client_port=9000
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
