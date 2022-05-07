@@ -3,6 +3,7 @@ LABEL maintainer André Costa <andreccosta@me.com>
 
 ENV XDEBUG_PORT 9000
 ENV XDEBUG_IDEKEY docker
+ENV XDEBUG_CONFIG discover_client_host=true
 
 RUN pecl install "xdebug" \
     && docker-php-ext-enable xdebug
